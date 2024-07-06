@@ -1,5 +1,6 @@
 import { useParams, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import useFetch from "./useFetch";
+import Counter from './Counter';
 
 const BlogDetails = () => {
   const history = useHistory();
@@ -20,6 +21,7 @@ const BlogDetails = () => {
       {isPending && <div>Loading...</div>}
       {blog && (
         <article>
+          <div>Time spent reading this Blog: <Counter /> seconds</div>
           <h2>{blog.title}</h2>
           <p>Written by: {blog.author}</p>
           <div>{blog.body}</div>
